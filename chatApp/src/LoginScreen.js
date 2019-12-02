@@ -32,7 +32,13 @@ export class LoginScreen extends Component {
         this.state.entredUID = 'superhero2'
         this.buttonPressed = this.buttonPressed.bind(this)
         CometChat.init(appID).then(() => {
-            console.log("Cometchat intialized");
+            CometChat.getLoggedinUser().then(
+                user => {
+                    if(user !== null){
+                        this.props.navigation.navigate('Home');
+                    }
+                }
+            );
             // window.document=new window.DOMParser().parseFromString("<?xml version='1.0'?>", 'text/xml');
         }, error => {
             console.error(error);
