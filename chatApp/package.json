@@ -14,6 +14,8 @@
     "@cometchat-pro/react-native-chat": "2.1.0",
     "@react-native-community/async-storage": "^1.12.0",
     "@react-native-community/masked-view": "^0.1.5",
+    "@react-native-firebase/app": "^8.4.3",
+    "@react-native-firebase/messaging": "^7.8.6",
     "base-64": "0.1.0",
     "react": "16.9.0",
     "react-native": "0.61.3",
