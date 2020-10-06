@@ -39,6 +39,15 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>to send notification</string>
+
+ <key>NSCameraUsageDescription</key>
+  <string>YOUR TEXT</string>
+   <key>NSMicrophoneUsageDescription</key>
+  <string>YOUR TEXT</string>
+   <key>NSPhotoLibraryUsageDescription</key>
+  <string>YOUR TEXT</string>
+
+
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>

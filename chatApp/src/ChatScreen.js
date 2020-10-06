@@ -672,6 +672,7 @@ export class ChatScreen extends Component {
       },
     };
     ImagePicker.showImagePicker(options, (response) => {
+      console.log("rrs", response);
       if (response.didCancel) {
         console.log("User cancelled photo picker");
       } else if (response.error) {
@@ -679,7 +680,7 @@ export class ChatScreen extends Component {
       } else if (response.customButton) {
         console.log("User tapped custom button: ", response.customButton);
       } else {
-        console.log("ImagePicker Response: ", response);
+        // console.log("ImagePicker Response: ", response);
         if (Platform.OS === "ios" && response.fileName != undefined) {
           var ext = response.fileName.split(".")[1].toLowerCase();
           var type = this.getMimeType(ext);
@@ -696,7 +697,7 @@ export class ChatScreen extends Component {
               ? response.uri
               : response.uri.replace("file://", ""),
         };
-        this.setState({ mediaMsg: file });
+        this.setState({ mediaMsg: file }, () => this.sendMediaMessage());
       }
     });
   }
@@ -927,6 +928,7 @@ export class ChatScreen extends Component {
   }
 
   sendMediaMessage() {
+    alert("called");
     if (this.state.mediaMsg.type.split("/")[0] == "image") {
       messageType = CometChat.MESSAGE_TYPE.IMAGE;
     } else if (this.state.mediaMsg.type.split("/")[0] == "video") {
